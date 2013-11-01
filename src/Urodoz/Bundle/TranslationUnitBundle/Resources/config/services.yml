@@ -1,0 +1,7 @@
+parameters:
+#    urodoz_translation_unit.example.class: Urodoz\Bundle\TranslationUnitBundle\Example
+
+services:
+#    urodoz_translation_unit.example:
+#        class: %urodoz_translation_unit.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
