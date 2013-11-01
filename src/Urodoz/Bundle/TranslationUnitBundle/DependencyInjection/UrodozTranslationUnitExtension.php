@@ -23,6 +23,14 @@ use Symfony\Component\DependencyInjection\Loader;
  */
 class UrodozTranslationUnitExtension extends Extension
 {
+
+    /**
+     * Container parameter key which holds the locales enabled
+     *
+     * @var string
+     */
+    const PARAM_KEY_LOCALES_ENABLED = "urodoz_translation_unit.localesenabled";
+
     /**
      * {@inheritDoc}
      */
@@ -30,6 +38,11 @@ class UrodozTranslationUnitExtension extends Extension
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
+
+        $container->setParameter(static::PARAM_KEY_LOCALES_ENABLED, array());
+        if (array_key_exists("locales", $config)) {
+            $container->setParameter(static::PARAM_KEY_LOCALES_ENABLED, $config["locales"]);
+        }
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
