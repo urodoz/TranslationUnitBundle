@@ -8,11 +8,11 @@
         {"name":"Albert Lacarta", "email":"urodoz@gmail.com"}
     ],
     "autoload": {
-        "psr-0": { "Urodoz\\Bundle\\TranslationUnitBundle": "src" }
+        "psr-0": { "Urodoz\\Bundle\\TranslationUnitBundle": "" }
     },
     "require": {
         "php": ">=5.3.2",
         "symfony/framework-bundle": "2.*"
     },
-    "target-dir": "src/Urodoz/Bundle/TranslationUnitBundle"
+    "target-dir": "Urodoz/Bundle/TranslationUnitBundle"
 }
