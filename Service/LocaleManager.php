@@ -63,6 +63,7 @@ class LocaleManager implements ContainerAwareInterface
 
     public function getTranslationsPackage(array $uuids)
     {
+        if(empty($uuids)) $uuids = array(uniqid()); //In no UUIDS received will return an empty array
         $dql = " SELECT t,tu FROM UrodozTranslationUnitBundle:TranslationUnit t "
                 . " INNER JOIN t.translatableUnit tu "
                 . " WHERE t.translatableUnit IN (:uuids) "
